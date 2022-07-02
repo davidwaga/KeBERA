@@ -22,9 +22,7 @@ class User{
     public function login(){
 
     }
-    public function register(){
-
-    }
+    
     public function logout(){
 
     }
