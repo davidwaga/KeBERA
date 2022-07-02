@@ -1,6 +1,7 @@
 
-</div>
+<!-- </div> -->
 </main>
+</div>
 <script src="<?php echo BASE_URL; ?>/assets/js/theme-js/core/popper.min.js"></script>
   <script src="<?php echo BASE_URL; ?>/assets/js/theme-js/core/bootstrap.min.js"></script>
   <script src="<?php echo BASE_URL; ?>/assets/js/theme-js/plugins/perfect-scrollbar.min.js"></script>

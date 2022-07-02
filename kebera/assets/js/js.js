@@ -4,7 +4,7 @@ function page_title(t){
 }
 
 function check_csrf(){
-    var hidden_csrf = `<?= Session['CSRF'] ?>`;
+    var hidden_csrf = `<?php echo $_SESSION['CSRF'] ?>`;
     var given_token = $('#csrf_token').val();
     console.log(hidden_csrf);
     if(hidden_csrf == given_token){

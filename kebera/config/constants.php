@@ -6,5 +6,5 @@ define('DBNAME','blog_db');
 define('DBPASS','');
 define('DBUSER','root');
 define('TOKEN', '');
-define('CSRF',''.sha1(date('Y-m-d').rand(1000,9000000)).'');
+define('CSRF',sha1(date('Y-m-d').rand(1000,9000000)));
 // echo CSRF;

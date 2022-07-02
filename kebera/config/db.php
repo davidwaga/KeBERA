@@ -7,9 +7,7 @@ class Database{
     private $password = DBPASS;
     private $dbname = DBNAME;
 
-    public function connect(){
-//        this->conn = $conn;
-      // echo $this->dbname;
+    public function connect(){     
         try {
           $this->conn = new PDO("mysql:host=".$this->servername.";dbname=".$this->dbname, $this->username, $this->password);
           // set the PDO error mode to exception
