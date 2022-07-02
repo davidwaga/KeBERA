@@ -1,4 +1,5 @@
 <form id="loginForm">
+    <?php echo $csrf_token; ?>
     <input type="text" id="name"/><br />
     <input type="password" id="psw"/><br />
     <button type="submit">Login</button>
