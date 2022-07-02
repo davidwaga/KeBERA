@@ -1,7 +1,7 @@
 <?php 
 $p  = explode('/', $_SERVER['REQUEST_URI']);
 $url = $_SERVER['REQUEST_URI'];
-
+//var_dump($_SERVER);
 switch($url){
     case "/":
         include_once "view-normal/index.php";

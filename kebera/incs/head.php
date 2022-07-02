@@ -16,6 +16,8 @@
   <link href="<?php echo BASE_URL; ?>/assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <script src="<?php echo BASE_URL; ?>/assets/js/theme-js/jquery-3.6.0.min.js"></script>
+  <script src="<?php echo BASE_URL; ?>/assets/js/js.js"></script>
   <link href="<?php echo BASE_URL; ?>/assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link id="pagestyle" href="<?php echo BASE_URL; ?>/assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />

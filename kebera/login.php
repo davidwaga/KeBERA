@@ -1,12 +1,10 @@
-<?php 
-include_once 'config/constants.php';
-include_once "incs/head.php";
-?>
+<form id="loginForm">
+    <input type="text" id="name"/><br />
+    <input type="password" id="psw"/><br />
+    <button type="submit">Login</button>
+</form>
 
-<script src="<?php echo BASE_URL.'/assets/js/users.js';?>">
+<script src="<?php echo BASE_URL.'/assets/js/login.js';?>">
 	
 </script>
 
-<?php 
-include_once "incs/foot.php";
-?>
