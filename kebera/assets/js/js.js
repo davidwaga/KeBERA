@@ -3,4 +3,14 @@ function page_title(t){
     document.title = t==null?'KeBERA':`${t} | KeBERA`;
 }
 
+function check_csrf(){
+    var hidden_csrf = `<?= Session['CSRF'] ?>`;
+    var given_token = $('#csrf_token').val();
+    console.log(hidden_csrf);
+    if(hidden_csrf == given_token){
+        alert('true')
+    }else{
+        alert('false')
+    }
+}
 // alert(`Location is: ${base_url}`)
