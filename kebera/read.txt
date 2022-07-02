@@ -1,0 +1,52 @@
+-save project in any directory
+-edit the config/constants.php to match your database settings
+-open terminal/cmd in directory where this file is located or rooted of project
+
+$ php -S localhost:9000 -t .
+in browser to url http://localhost:9000
+
+the system assumes a mini-server described above
+
+--to save in db 
+for example when in apis/models/UserModal.php
+do
+include_once "../../helpers.php";
+$helper = new Helper();
+$helper->query('insert into users set name=:name', [':name'=>$name]);
+
+--to select all from db 
+do
+
+$helper = new Helper();
+$p = $helper->query('select * from user');
+
+$arr = [];
+foreach($p->fetchAll(PDO::ASSOC) as $row){
+	array_push($arr, ["id"=>$row['id'], ...]);
+}
+$res["data"] = $arr;
+echo json_encode($res);
+
+--to select one 
+do
+
+$p = $helper->query("select * from user where id=:id", [":id"=>$id]);
+$po = $p->fetch(PDO::ASSOC);
+echo json_encode($po);
+
+--to check whether saved
+do 
+
+if($p){
+	.....
+}
+
+--to update 
+$p = $helper->query("update user set name=:name where id=:id",[":name"=>$name, ":id"=>$id]);
+
+
+for url such www.example.com/products/78
+look at products/detail.php to check how to obtain 78
+
+please submit any query
+this is just simple guide and structure
