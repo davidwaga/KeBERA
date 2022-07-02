@@ -1,1 +1,1 @@
-const base_url = "localhost";
+const base_url = document.location
