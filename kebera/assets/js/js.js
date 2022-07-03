@@ -26,3 +26,8 @@ function note(text, color='primary'){
         $('#note').text('text')
     },5000)
 }
+
+function highlight(txt='Current Page'){
+    $('#p1').text(txt);
+    $('#p2').text(txt);
+}

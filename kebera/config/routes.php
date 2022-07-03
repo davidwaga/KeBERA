@@ -31,7 +31,12 @@ switch($url){
     case "/farmer-groups/".$p[2]:
         include_once "view-normal/farmer-group/details.php=45";
         break;
-        
+    case "/extension-workers":
+        include_once "view-normal/extension-worker/index.php";
+        break; 
+    case "/my-profile":
+        include_once "view-normal/my-profile/index.php";
+        break;    
     case "/remember-password":
         include_once "remember.php";
         break;
