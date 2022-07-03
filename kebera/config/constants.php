@@ -2,7 +2,7 @@
 
 define('BASE_URL', 'http://'.$_SERVER['HTTP_HOST']);
 define('DBHOST', '127.0.0.1');
-define('DBNAME','blog_db');
+define('DBNAME','blogs');
 define('DBPASS','');
 define('DBUSER','root');
 define('TOKEN', '');

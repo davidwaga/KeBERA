@@ -196,4 +196,9 @@
       <a class="btn bg-gradient-primary mt-4 w-100" href="https://www.creative-tim.com/product/soft-ui-dashboard-pro?ref=sidebarfree" type="button">Upgrade to pro</a>
     </div>
   </aside>
+  
   <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg ">
+  <div id="note" class="alert alert-dismissible " style="display:none;">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+     
+</div>

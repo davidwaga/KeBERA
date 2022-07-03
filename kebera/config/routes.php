@@ -1,7 +1,7 @@
 <?php 
 $p  = explode('/', $_SERVER['REQUEST_URI']);
 $url = $_SERVER['REQUEST_URI'];
-//var_dump($_SERVER);
+
 switch($url){
     case "/":
         include_once "view-normal/index.php";
@@ -42,7 +42,13 @@ switch($url){
     case "/dashboard":
         include_once "view-normal/index.php";
         break;
+   
     default:
-        include_once "404.php";
+        if(strpos($url,'api')){
+            header("Content-Type: application/json");
+            include_once "apis/api-routes.php";
+        }else{
+            include_once "404.php";
+        }        
         break;
 }

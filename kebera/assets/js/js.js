@@ -1,4 +1,6 @@
-const base_url = `http://${window.location.host}`;
+const http = "http://";
+const base_url = `${http}${window.location.host}`;
+const api_url = `${http}${window.location.host}/apis/api`;
 function page_title(t){
     document.title = t==null?'KeBERA':`${t} | KeBERA`;
 }
@@ -14,3 +16,13 @@ function check_csrf(){
     }
 }
 // alert(`Location is: ${base_url}`)
+
+function note(text, color='primary'){
+    $('#note').css({display:'block'})
+    $('#note').addClass(`alert-${color}`)
+    $('#note').text(text)
+    setTimeout(()=>{
+        $('#note').css({display:'none'})
+        $('#note').text('text')
+    },5000)
+}
