@@ -1,9 +1,7 @@
 <?php 
 include_once "../../models/UserModal.php";
 //include_once "../../../config/db.php";
-$user = new User('Simon');
-//$db = new Database();
-
+$user = new User();
 $users = $user->index();
 $res = [];
 
