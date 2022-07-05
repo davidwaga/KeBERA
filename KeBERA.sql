@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 04, 2022 at 11:45 AM
+-- Generation Time: Jul 05, 2022 at 03:37 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.8
 
@@ -290,6 +290,7 @@ CREATE TABLE `user` (
   `profile_pic` blob NOT NULL,
   `remember_token` varchar(255) NOT NULL,
   `bio` varchar(255) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -303,10 +304,19 @@ CREATE TABLE `user` (
 CREATE TABLE `user_type` (
   `user_type_id` int(10) NOT NULL,
   `type_name` varchar(255) NOT NULL,
-  `user_id` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user_type`
+--
+
+INSERT INTO `user_type` (`user_type_id`, `type_name`, `created_at`, `updated_at`) VALUES
+(1, 'Farmer', '2022-07-05 07:51:56', '2022-07-05 10:51:56'),
+(2, 'Researcher', '2022-07-05 07:52:25', '2022-07-05 10:52:25'),
+(3, 'Extension Worker', '2022-07-05 07:52:44', '2022-07-05 10:52:44'),
+(4, 'System Admin', '2022-07-05 07:53:12', '2022-07-05 11:17:00');
 
 --
 -- Indexes for dumped tables
@@ -440,14 +450,14 @@ ALTER TABLE `tokens`
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`user_id`);
+  ADD PRIMARY KEY (`user_id`),
+  ADD KEY `user_type_id` (`user_type_id`);
 
 --
 -- Indexes for table `user_type`
 --
 ALTER TABLE `user_type`
-  ADD PRIMARY KEY (`user_type_id`),
-  ADD KEY `user_id` (`user_id`);
+  ADD PRIMARY KEY (`user_type_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -565,7 +575,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `user_type`
 --
 ALTER TABLE `user_type`
-  MODIFY `user_type_id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_type_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
@@ -666,10 +676,10 @@ ALTER TABLE `tokens`
   ADD CONSTRAINT `tokens_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
 
 --
--- Constraints for table `user_type`
+-- Constraints for table `user`
 --
-ALTER TABLE `user_type`
-  ADD CONSTRAINT `user_type_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
+ALTER TABLE `user`
+  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`user_type_id`) REFERENCES `user_type` (`user_type_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
