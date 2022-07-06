@@ -16,18 +16,18 @@ $("#registerForm").submit(function(e){
     var mail = $('#mail').val();
     var bio = $('#bio').val();
     var user_type = $('#user_type').val()
-    var psw = $('#psw').val();
+    var passw = $('#psw').val();
     var cpsw = $('#cpsw').val();
     $("#registerButton").attr('disabled',true);
     // console.log(psw)
     // console.log(cpsw)
     if(name!=='' && mail !== ''){
-        if(psw===cpsw){
+        if(passw===cpsw){
             // alert('passwords matched')
             $.post(
                 `${api_url}/users/register.php`, 
                 JSON.stringify({
-                    name,mail,bio,psw,user_type
+                    name,mail,bio,passw,user_type
                 }), 
                 function(data,status){
                     if(data.status==1){

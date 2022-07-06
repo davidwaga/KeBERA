@@ -8,8 +8,8 @@
                   <input type="email" id="mail" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon">
                 </div>
                 <div class="mb-3">
-                <select name="" class="form-control" id="user_type">
-                  <option value="" disabled>SELECT WHERE YOU FALL</option>                  
+                <select name="" class="form-control" id="user_type" reqiured>
+                  <option value="" disabled selected>SELECT WHERE YOU FALL</option>                  
                 </select>
                 </div>                
                 <div class="mb-3">

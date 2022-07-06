@@ -21,7 +21,7 @@ if($help->has_account($user->name)){
 }else{
     if($user->register()){
         $res["status"]=1;
-        $res["message"]="User register successfully!";
+        $res["message"]="Your account was created successfully!";
     }else{
         $res["status"]=0;
         $res["message"]="User was not register!";

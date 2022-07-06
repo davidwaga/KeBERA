@@ -5,7 +5,7 @@ $('#loginForm').submit(function(e){
     var psw = $('#psw').val();
     // check_csrf();
     $.post(`${api_url}/users/signin.php`,JSON.stringify({username:name, passw:psw}),function(data, status){
-        // console.log({username:name, passw:psw})
+        console.log({username:name, passw:psw})
         if(data.status==1){
             note(data.message,'success');
             setTimeout(()=>{

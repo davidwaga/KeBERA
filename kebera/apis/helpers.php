@@ -11,11 +11,15 @@ class Helper{
     public function checkToken($token, $user){
         
     }
+    public function logged_in_user_id($token){
+        $user_token = $this->query("select * from tokens where token=:token",[":token"=>$token]);
+        $user = $user_token->fetch(PDO::FETCH_ASSOC);
+        return $user["user_id"];
+    }
     public function create_token($id){
         $token = sha1(date('Y-m-d').$id.rand(1000,9000000));
-        // $token = hash_algos(date('Y-m-d').$id.rand(1000,9000000));
         $_SESSION['TOKEN']=$token;
-        $this->query("INSERT INTO user_tokens SET token=:token, userId=:id",[":id"=>$id,':token'=>$token]);
+        $this->query("INSERT INTO tokens SET token=:token, user_id=:id",[":id"=>$id,':token'=>$token]);
         return $token;
     }
     public function deleteToken($token){
