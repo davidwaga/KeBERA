@@ -1,7 +1,7 @@
 <?php 
 include_once "../../helpers.php";
 class User{
-    public $id, $name, $user_type, $email, $passw;
+    public $user_id, $name, $user_type, $email, $passw, $avatar, $bio, $remember;
     private $conn;
     public $helper;
     public function __construct(){
@@ -13,7 +13,16 @@ class User{
     }
     
     public function register(){        
-        return $this->conn->query("insert into user set `username`=:name, passw=:passw, email=:mail", [":name"=>$this->name, ":mail"=>$this->email, ":passw"=>password_hash($this->passw, PASSWORD_DEFAULT)]);
+        return $this->conn->query("insert into user set username=:name, password=:passw, email=:mail, remember_token=:remember, profile_pic=:avatar, bio=:bio, user_type_id=:user_type", 
+            [
+                ":name"=>$this->name, 
+                ":mail"=>$this->email, 
+                ":passw"=>password_hash($this->passw, PASSWORD_DEFAULT),
+                ":bio"=>$this->bio,
+                ":user_type"=>$this->user_type,
+                ":remember"=>$this->remember,
+                ":avatar"=>$this->avatar
+            ]);
     }
     public function one($id){
         return $this->conn->query("select * from user where id=:id", [":id"=>$id]);
@@ -26,7 +35,9 @@ class User{
                 ":name"=>$this->name
             ]);
     }
-    
+    public function user_types(){
+        return $this->conn->query("select * from user_type");
+    }
     public function logout(){
 
     }

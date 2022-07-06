@@ -19,7 +19,7 @@ if($help->has_account($user->name)){
         
     }else{
         $res["status"]=0;
-        $res["message"]="Either password or username is wrong!";
+        $res["message"]="Either usernam or password is wrong!";
     }
 }else{
     $res["status"]=0;

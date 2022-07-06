@@ -41,9 +41,11 @@ switch($url){
         include_once "remember.php";
         break;
     case "/register":
-        include_once "register.php";
+        include_once "signup.php";
         break;
-    
+    case "/register/confirm-email":
+        include_once "confirm.php";
+        break;
     case "/dashboard":
         include_once "view-normal/index.php";
         break;
