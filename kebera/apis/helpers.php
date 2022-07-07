@@ -16,6 +16,17 @@ class Helper{
         $user = $user_token->fetch(PDO::FETCH_ASSOC);
         return $user["user_id"];
     }
+    public function get_user_type(){
+        $i = isset($_SESSION['TOKEN'])?$_SESSION['TOKEN']:null;
+        if($i==null){
+            $p = 0;
+        }else{
+            $user_token = $this->query("select * from tokens where token=:token",[":token"=>$i]);
+            $user = $user_token->fetch(PDO::FETCH_ASSOC);
+            $p = $user["user_type_id"];
+        }
+        return $p;
+    }
     public function create_token($id){
         $token = sha1(date('Y-m-d').$id.rand(1000,9000000));
         $_SESSION['TOKEN']=$token;

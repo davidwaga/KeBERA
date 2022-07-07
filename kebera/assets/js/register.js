@@ -1,5 +1,5 @@
 highlight('Register')
-
+active('/register')
 //register js goes here!!!!!1
 
 $(window).ready(function(){

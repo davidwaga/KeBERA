@@ -6,11 +6,11 @@
               <form role="form text-left" id="loginForm">
               <!-- <?php echo $csrf_token; ?> -->
                 <div class="mb-3">
-                  <input type="text" class="form-control" placeholder="Email Address or Username" id="name" aria-label="Name" aria-describedby="email-addon">
+                  <input type="text" class="form-control" placeholder="Email Address or Username" id="name" aria-label="Name" aria-describedby="email-addon" required>
                 </div>
                 
                 <div class="mb-3">
-                  <input type="password" class="form-control" placeholder="Password" id="psw" aria-label="Password" aria-describedby="password-addon">
+                  <input type="password" class="form-control" placeholder="Password" id="psw" aria-label="Password" aria-describedby="password-addon" reqiured>
                 </div>
                 
                 <div class="text-center">

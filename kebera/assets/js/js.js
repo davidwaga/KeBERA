@@ -16,7 +16,9 @@ function check_csrf(){
     }
 }
 // alert(`Location is: ${base_url}`)
-
+function active(x){
+    $(`a[href='${x}']`).addClass(' active')
+}
 function note(text, color='primary'){
     $('#note').css({display:'block'})
     $('#note').addClass(`alert-${color}`)

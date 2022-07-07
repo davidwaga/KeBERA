@@ -6,11 +6,23 @@ switch($url){
     case "/":
         include_once "view-normal/index.php";
         break;
+    case "/category":
+        include_once "view-normal/index.php";
+        break;
+    case "/inputs":
+        include_once "view-normal/inputs/index.php";
+        break;
+    case "/input-dealers":
+        include_once "view-normal/input-dealers/index.php";
+        break;
     case "/login":
         include_once "login.php";
         break;
     case "/logout":
         include_once "logout.php";
+        break;
+    case "/pgs":
+        include_once "view-normal/pgs/index.php";
         break;
     case "/products":
         include_once "view-normal/products/index.php";

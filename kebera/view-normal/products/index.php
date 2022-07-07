@@ -98,3 +98,5 @@ Nam vitae nulla ullam ut! Quaerat voluptatem rerum itaque praesentium similique 
 Sunt et nemo deserunt alias, saepe nam dolores iusto? Impedit tempora illum facilis quo, maxime commodi, ad in, itaque voluptate harum ratione sint aliquam veniam suscipit? Dicta mollitia ut amet?
 Repudiandae fugit dignissimos tempora possimus quae minus tempore cupiditate illum voluptatum quas aliquam ipsa eius nostrum delectus iusto deserunt, suscipit porro? Tempore, a. Doloremque tempore exercitationem consectetur aperiam laborum totam?
 Maxime corrupti fuga enim error ipsum hic dolorum labore, beatae porro saepe sequi quidem et nulla, vel, inventore nisi veniam cumque laborum totam aperiam illum nemo ducimus. Nostrum, ea quia.
+
+<script src="assets/js/products.js"></script>
