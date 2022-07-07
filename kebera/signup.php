@@ -38,5 +38,5 @@
 <script src="/assets/js/register.js"></script>
 <script>
     page_title('Create KeBERA account');
-    active('/register')
+    // active('/register')
 </script>

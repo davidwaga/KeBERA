@@ -1,5 +1,6 @@
 page_title('Login...')
 active('/login')
+highlight('Login')
 $('#loginForm').submit(function(e){
     e.preventDefault();
     var name = $('#name').val();
