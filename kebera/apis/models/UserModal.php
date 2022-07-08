@@ -6,7 +6,6 @@ class User{
     public $helper;
     public function __construct(){
         $this->conn = new Helper();
-        
     }
     public function index(){
         return $this->conn->query("select * from user");
