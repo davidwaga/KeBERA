@@ -1,13 +1,9 @@
 <?php 
 include_once "../../helpers.php";
+
 class Product{
-    public $product_id, $product_name, 
-           $product_pic,$product_description,
-           $product_stock, $category_id, $product_price,  
-           $size_variation_id, $stall_id, $farm_id ;
-    private $conn;
-    public $helper;
-    private $tb_name = 'product';
+    public $product_id, $product_name, $product_pic, $product_description, $proudct_stock, $user_id, $category_id, $product_price, $size_variation_id, $stall_id, $farm_id, $update;
+    private $conn, $tb_name='products';
     public function __construct(){
         $this->conn = new Helper();
     }
