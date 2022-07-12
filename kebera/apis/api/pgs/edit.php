@@ -1,4 +1,6 @@
 <?php 
+header("Content-Type: application/json");
+header("Accept: PUT");
 include_once "../../helpers.php";
 include_once "../models/PGSModal.php";
 
