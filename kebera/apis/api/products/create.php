@@ -15,15 +15,17 @@ if($check->rowCount()>0){
     goto PRODUCT;
 }
 
-$product->product_name = $product_name;
-$product->product_pic = $product_pic;
-$product->product_description = $product_description;
-$product->product_stock = $product_stock;
+$product->product_name = $data['product_name'];
+$product->product_pic = $data['product_pic'];
+$product->product_description = $data['product_description'];
+$product->product_stock = $data['product_stock'];
 $product->category_id = $data["category_id"];
-$product->product_price = $product_price;
+$product->product_price = $data['product_price'];
 $product->size_variation_id = $data['size_variation_id'];
 $product->stall_id = $data['stall_id'];
 $product->farm_id = $data['farm_id'];
+$product->user_id = $help->logged_in_user_id($_SESSION['TOKEN']);
+
 
 if($product->create()){
     $res['status']=1;
