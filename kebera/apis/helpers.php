@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include_once "../../../config/db.php";
 
 class Helper{
@@ -10,8 +11,27 @@ class Helper{
     public function checkToken($token, $user){
         
     }
-    public function generateToken(){
-        
+    public function logged_in_user_id($token){
+        $user_token = $this->query("select * from tokens where token=:token",[":token"=>$token]);
+        $user = $user_token->fetch(PDO::FETCH_ASSOC);
+        return $user["user_id"];
+    }
+    public function get_user_type(){
+        $i = isset($_SESSION['TOKEN'])?$_SESSION['TOKEN']:null;
+        if($i==null){
+            $p = 0;
+        }else{
+            $user_token = $this->query("select * from tokens where token=:token",[":token"=>$i]);
+            $user = $user_token->fetch(PDO::FETCH_ASSOC);
+            $p = $user["user_type_id"];
+        }
+        return $p;
+    }
+    public function create_token($id){
+        $token = sha1(date('Y-m-d').$id.rand(1000,9000000));
+        $_SESSION['TOKEN']=$token;
+        $this->query("INSERT INTO tokens SET token=:token, user_id=:id",[":id"=>$id,':token'=>$token]);
+        return $token;
     }
     public function deleteToken($token){
         
@@ -32,4 +52,9 @@ class Helper{
 
     }
     public function is_consumer(){}
+
+    public function has_account($txt){
+        $user = $this->query("SELECT * FROM user WHERE username=:txt OR email=:txt",[':txt'=>$txt]);
+        return $user->rowCount()>0?true:false;
+    }
 }
