@@ -39,7 +39,7 @@ switch($url){
     case "/products/".$p[2]."/renew":
         include_once "view-normal/products/details.php";
         break;
-
+    
     case "/farms":
         include_once "view-normal/farmer/index.php";
         break;
@@ -66,6 +66,9 @@ switch($url){
         break;
     case "/register/confirm-email":
         include_once "confirm.php";
+        break;
+    case "/user/".$p[2]:
+        include_once "view-normal/my-profile/user.php";
         break;
     case "/dashboard":
         include_once "view-normal/index.php";
