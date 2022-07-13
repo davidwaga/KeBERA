@@ -12,8 +12,9 @@ $(window).ready(function(){
             t+=`<tr>
                 <td>${x}</td>
                 <td>${c.pgs_name}</td>
-                <td>0</td>
                 <td>${c.pgs_location}</td>
+                <td>${c.members}</td>
+                
                 <td><a href='/user/${c.user.user_id}'>${c.user.username}</a></td>
                 <td>${c.created_at}</td>
                 <td><a href='/pgs/${c.pgs_id}' class='btn btn-sm btn-success'>Details</a></td>

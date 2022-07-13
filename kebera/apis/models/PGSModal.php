@@ -18,6 +18,9 @@ class PGS{
         $this->pgs_id = $id;
         return $this->conn->query("select * from pgs_members where pgs_id=:id",[':id'=>$this->pgs_id]);
     }
+    public function num_of_members($id){
+        return $this->conn->query("select count(*) as members from pgs_members where pgs_id=:id",[':id'=>$id]);
+    }
     public function create(){
         return $this->conn->query("insert into $this->tb_name set pgs_name=:name, pgs_location=:location, user_id=:user",[':name'=>$this->pgs_name, ':location'=>$this->pgs_location, ':user'=>$this->user_id]);
     }

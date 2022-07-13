@@ -57,7 +57,10 @@ switch($url){
         break; 
     case "/my-profile":
         include_once "view-normal/my-profile/index.php";
-        break;    
+        break;  
+    case "/my-profile/".$p[2].'/edit':
+        include_once "view-normal/my-profile/edit-profile.php";
+        break;  
     case "/remember-password":
         include_once "remember.php";
         break;
