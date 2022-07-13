@@ -1,6 +1,8 @@
 <?php 
+header("Content-Type: application/json");
+header("Accept: DELETE");
 include_once "../../helpers.php";
-include_once "../models/PGSModal.php";
+include_once "../../models/PGSModal.php";
 
 $helper = new Helper();
 $pgs = new PSG();

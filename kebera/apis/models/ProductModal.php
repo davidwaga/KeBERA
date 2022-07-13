@@ -12,8 +12,9 @@ class Product{
     }
     public function one($id){
         $this->product_id = $id;
-        return $this->conn->query("select * from $this->tb_name where product_id=:product_id",[':product_id'=>$this->product_id]);
+        return $this->conn->query("select * from $this->tb_name where product_id=:id",[':id'=>$this->product_id]);
     }
+    
     public function create(){        
         return $this->conn->query("insert into $this->tb_name set product_name=:product_name, product_pic=:product_pic, product_description=:product_description, 
                                 product_stock=:product_stock, product_price=:product_price, category_id=:category_id, size_variation_id=:size_variation_id, stall_id=:stall_id, 

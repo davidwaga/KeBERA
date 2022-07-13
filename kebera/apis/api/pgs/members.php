@@ -1,8 +1,10 @@
 <?php
+header("Content-Type: application/json");
+header("Accept: GET");
 include_once "../../helpers.php";
-include_once "../models/PGSModal.php";
+include_once "../../models/PGSModal.php";
 
-$pgs = new PSG();
+$pgs = new PGS();
 $helper = new Helper();
 
 $id = $_GET['id'];

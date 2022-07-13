@@ -1,5 +1,8 @@
 <?php 
 $p  = explode('/', $_SERVER['REQUEST_URI']);
+if(count($p)<3){
+    $p[2]=null;
+}
 $url = $_SERVER['REQUEST_URI'];
 
 switch($url){
@@ -24,6 +27,9 @@ switch($url){
     case "/pgs":
         include_once "view-normal/pgs/index.php";
         break;
+    case "/pgs/".$p[2]:
+        include_once "view-normal/pgs/details.php";
+        break;
     case "/products":
         include_once "view-normal/products/index.php";
         break;
@@ -34,8 +40,11 @@ switch($url){
         include_once "view-normal/products/details.php";
         break;
 
-    case "/farmers":
+    case "/farms":
         include_once "view-normal/farmer/index.php";
+        break;
+    case "/farms/add-new":
+        include_once "view-normal/farmer/add-farmer.php";
         break;
     case "/farmer-groups":
         include_once "view-normal/farmer-group/index.php";

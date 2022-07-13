@@ -27,6 +27,20 @@ class Helper{
         }
         return $p;
     }
+    public function get_user($i){
+        $p = $this->query("select * from user where user_id=:id",[':id'=>$i]);
+        $p = $p->fetch();
+        return [
+            "user_id"=>$p['user_id'],
+            "username"=>$p['username'],
+            "email"=>$p['email'],
+            "bio"=>$p['bio'],
+            "user_type_id"=>$p['user_type_id'],
+            "profile_pic"=>$p['profile_pic']
+        ];
+        
+    }
+
     public function create_token($id){
         $token = sha1(date('Y-m-d').$id.rand(1000,9000000));
         $_SESSION['TOKEN']=$token;
