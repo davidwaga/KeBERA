@@ -33,3 +33,6 @@ function highlight(txt='Current Page'){
     $('#p1').text(txt);
     $('#p2').text(txt);
 }
+
+
+

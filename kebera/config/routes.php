@@ -30,6 +30,9 @@ switch($url){
     case "/pgs/".$p[2]:
         include_once "view-normal/pgs/details.php";
         break;
+    case "/pgs/".$p[2].'/add-member':
+        include_once "view-normal/pgs/add-member.php";
+        break;
     case "/products":
         include_once "view-normal/products/index.php";
         break;
@@ -39,7 +42,7 @@ switch($url){
     case "/products/".$p[2]."/renew":
         include_once "view-normal/products/details.php";
         break;
-
+    
     case "/farms":
         include_once "view-normal/farmer/index.php";
         break;
@@ -57,7 +60,10 @@ switch($url){
         break; 
     case "/my-profile":
         include_once "view-normal/my-profile/index.php";
-        break;    
+        break;  
+    case "/my-profile/".$p[2].'/edit':
+        include_once "view-normal/my-profile/edit-profile.php";
+        break;  
     case "/remember-password":
         include_once "remember.php";
         break;
@@ -66,6 +72,9 @@ switch($url){
         break;
     case "/register/confirm-email":
         include_once "confirm.php";
+        break;
+    case "/user/".$p[2]:
+        include_once "view-normal/my-profile/user.php";
         break;
     case "/dashboard":
         include_once "view-normal/index.php";

@@ -16,6 +16,7 @@ if($help->has_account($user->name)){
     if(password_verify($user->passw,$logged_in['password'])){
         $res["status"]=1;
         $res["message"]="Login was successful";
+        $res["user_type"]=$logged_in['user_type_id'];
         $res["auth_token"]=$help->create_token($logged_in["user_id"]);
         
     }else{

@@ -37,8 +37,8 @@ class User{
     public function user_types(){
         return $this->conn->query("select * from user_type");
     }
-    public function logout(){
-
+    public function logout(){    
+        return $this->conn->deleteToken();
     }
     public function confirm_email(){
 

@@ -22,5 +22,9 @@
   <!-- CSS Files -->
   <link id="pagestyle" href="/assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
 </head>
-
+<?php 
+if(!isset($_SESSION['TOKEN'])){
+  // header('Location: /login');
+}
+?>
 <body class="g-sidenav-show  bg-gray-100">

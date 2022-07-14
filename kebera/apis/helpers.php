@@ -47,8 +47,10 @@ class Helper{
         $this->query("INSERT INTO tokens SET token=:token, user_id=:id",[":id"=>$id,':token'=>$token]);
         return $token;
     }
-    public function deleteToken($token){
-        
+    public function deleteToken(){
+        $this->query("delete from tokens where token=:token",[':token'=>$_SESSION['TOKEN']]);
+        $_SESSION['TOKEN']=null;
+        $_SESSION['TYPE']=null;
     }
     
     public function query($stmt, $params = []){
@@ -70,5 +72,25 @@ class Helper{
     public function has_account($txt){
         $user = $this->query("SELECT * FROM user WHERE username=:txt OR email=:txt",[':txt'=>$txt]);
         return $user->rowCount()>0?true:false;
+    }
+
+    public function upload_file($path, $g){
+        
+        // die(json_encode($_FILES));
+        $file = $_FILES;
+        $currentDirectory = getcwd();
+        $uploadDirectory = '/assets/img/'.$path.'/';
+        $errors = []; // Store errors here
+
+        $fileExtensionsAllowed = ['jpeg','jpg','png']; // These will be the only file extensions allowed 
+
+        $fileName = $file['name'];
+        $fileSize = $file['size'];
+        $fileTmpName  = $file['tmp_name'];
+        $fileType = $file['type'];
+        $fileExtension = strtolower(end(explode('.',$fileName)));
+
+        $uploadPath = $currentDirectory . $uploadDirectory . basename($fileName); 
+
     }
 }

@@ -11,7 +11,7 @@
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
             <div class="input-group">
               <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-              <input type="text" class="form-control" placeholder="Type here...">
+              <input type="text" id="search-text" class="form-control" placeholder="Type here...">
             </div>
           </div>
           <ul class="navbar-nav  justify-content-end">
@@ -113,3 +113,7 @@
       </div>
     </nav>
     <div class="container-fluid py-4">
+    <div id="search-results" class="md-3" style='display:none;'>
+        <h3 class='text-center'>Search Results</h3>
+        <div id="results"></div>
+    </div>
