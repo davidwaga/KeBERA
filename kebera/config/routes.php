@@ -30,6 +30,9 @@ switch($url){
     case "/pgs/".$p[2]:
         include_once "view-normal/pgs/details.php";
         break;
+    case "/pgs/".$p[2].'/add-member':
+        include_once "view-normal/pgs/add-member.php";
+        break;
     case "/products":
         include_once "view-normal/products/index.php";
         break;

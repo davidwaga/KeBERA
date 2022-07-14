@@ -11,11 +11,17 @@ $member = new PGSMember();
 $id = $_GET['id'];
 $pgs = $pgs1->one($id)->fetch(PDO::FETCH_ASSOC);
 
+$mems = [];
+
+foreach($pgs1->member($id)->fetchAll() as $m){
+    array_push($mems, $helper->get_user($m['user_id']));
+}
+
 echo json_encode([
     "pgs"=>$pgs,
     "user"=>$helper->get_user($pgs['user_id']),
-    "number_of_members"=>$pgs1->num_of_members($row["pgs_id"])->fetch()["members"], 
-    "members"=>$pgs1->member($row['pgs_id'])->fetchAll()
+    "number_of_members"=>$pgs1->num_of_members($id)->fetch()["members"], 
+    "members"=>$mems
 ]);
 
 

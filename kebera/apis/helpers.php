@@ -47,8 +47,10 @@ class Helper{
         $this->query("INSERT INTO tokens SET token=:token, user_id=:id",[":id"=>$id,':token'=>$token]);
         return $token;
     }
-    public function deleteToken($token){
-        
+    public function deleteToken(){
+        $this->query("delete from tokens where token=:token",[':token'=>$_SESSION['TOKEN']]);
+        $_SESSION['TOKEN']=null;
+        $_SESSION['TYPE']=null;
     }
     
     public function query($stmt, $params = []){

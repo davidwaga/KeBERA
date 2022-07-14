@@ -16,3 +16,6 @@
     </table>
 </div>
 <script src="assets/js/pgs.js"></script>
+<script>
+    pgs_index();
+</script>
