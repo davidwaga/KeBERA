@@ -13,6 +13,7 @@ $user->email = $data["mail"];
 $user->passw = $data["passw"];
 $user->avatar = "avatars/normal-user.png";
 $user->user_type = $data["user_type"];
+$user->phone_number = $data["phone_number"];
 $user->remember = sha1($user->name.rand(10000, 1000000));
 $user->bio = $data["bio"];
 if($help->has_account($user->name)){

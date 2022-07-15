@@ -21,5 +21,13 @@ $p  = explode('/', $_SERVER['REQUEST_URI']);
 
 <script>
     selectOptions();
+    $('#addMember').submit((e)=>{
+        e.preventDefault();
+        var c  = $('#person').val();
+        var p = $("#pgs").val();
 
+        $.post(`${api_url}/pgs_member/create.php`,JSON.stringify({pgs_id:p,user_id:c}),(data,status)=>{
+            note(data.message, 'success');
+        })
+    })
 </script>

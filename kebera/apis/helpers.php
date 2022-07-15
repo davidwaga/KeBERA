@@ -36,7 +36,8 @@ class Helper{
             "email"=>$p['email'],
             "bio"=>$p['bio'],
             "user_type_id"=>$p['user_type_id'],
-            "profile_pic"=>$p['profile_pic']
+            "profile_pic"=>$p['profile_pic'],
+            "phone_number"=>$p['phone_number'],
         ];
         
     }
@@ -70,7 +71,7 @@ class Helper{
     public function is_consumer(){}
 
     public function has_account($txt){
-        $user = $this->query("SELECT * FROM user WHERE username=:txt OR email=:txt",[':txt'=>$txt]);
+        $user = $this->query("SELECT * FROM user WHERE username=:txt OR email=:txt OR phone_number=:txt",[':txt'=>$txt]);
         return $user->rowCount()>0?true:false;
     }
 

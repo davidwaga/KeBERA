@@ -18,6 +18,7 @@ $("#registerForm").submit(function(e){
     var user_type = $('#user_type').val()
     var passw = $('#psw').val();
     var cpsw = $('#cpsw').val();
+    var phone_number = $('#phone').val()
     $("#registerButton").attr('disabled',true);
     // console.log(psw)
     // console.log(cpsw)
@@ -27,7 +28,7 @@ $("#registerForm").submit(function(e){
             $.post(
                 `${api_url}/users/register.php`, 
                 JSON.stringify({
-                    name,mail,bio,passw,user_type
+                    name,mail,bio,passw,user_type,phone_number
                 }), 
                 function(data,status){
                     if(data.status==1){

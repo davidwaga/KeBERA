@@ -18,6 +18,12 @@ switch($url){
     case "/input-dealers":
         include_once "view-normal/input-dealers/index.php";
         break;
+    case "/input-dealers/".$p[2]:
+        include_once "view-normal/input-dealers/details.php";
+        break;
+    case "/input-dealers/".$p[2]."/add-input":
+        include_once "view-normal/input-dealers/add-input.php";
+        break;
     case "/login":
         include_once "login.php";
         break;

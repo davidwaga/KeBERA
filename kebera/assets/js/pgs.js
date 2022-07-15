@@ -37,8 +37,8 @@ function pgs_details(i){
         $('#name').text(data.user.username)
         $('#avatar').attr('src',`${base_url}/assets/img/${data.user.profile_pic}`)
 
-        if(data.members.length<0){
-            $('#view-members').html(`<div class='card'><div class='card-content text-center'>No members yet<br/><button class='btn btn-sm btn-success'>Add Member</button></div>`)
+        if(data.members.length<=0){
+            $('#view-members').html(`<div class='card'><div class='card-content text-center'><span class='mb-3'>No members yet</span><br/><br/><br/><a class='btn btn-sm btn-success' href='/pgs/${data.pgs.pgs_id}/add-member'>Add Member</a></div>`)
         }else{
             var pl = ''
             var k=1;

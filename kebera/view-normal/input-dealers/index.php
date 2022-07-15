@@ -1,17 +1,18 @@
 
-<div id="input_dealers-list">
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <td>#</td>
-                <td>Location</td>
-                <td>User</td>
-                <td>Created by</td>
-                <td>Created On</td>
-                <td></td>
-            </tr>
-        </thead>
-        <tbody id="input_dealers-table"></tbody>
-    </table>
-</div>
-<script src="assets/js/input_dealers.js"></script>
+<?php 
+// include_once "apis/helpers.php";
+$h = new Helper();
+
+if(isset($_SESSION['TYPE'])){
+    $id = $h->logged_in_user_id($_SESSION['TOKEN']);
+    if($_SESSION['TYPE']==6){
+        echo "<a href='/input-dealers/$id/add-input' class='btn btn-sm btn-primary' style='float:right;'>Add Input</a>";
+    }
+}
+?>
+
+<div class="row" id="input-dealers"></div>
+<script src="assets/js/input-dealers.js"></script>
+<script>
+    listInputDealers();
+</script>

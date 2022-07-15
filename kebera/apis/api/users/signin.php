@@ -17,6 +17,7 @@ if($help->has_account($user->name)){
         $res["status"]=1;
         $res["message"]="Login was successful";
         $res["user_type"]=$logged_in['user_type_id'];
+        $_SESSION['TYPE']=$logged_in['user_type_id'];
         $res["auth_token"]=$help->create_token($logged_in["user_id"]);
         
     }else{
