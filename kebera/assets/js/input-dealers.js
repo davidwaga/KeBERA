@@ -7,7 +7,7 @@ function listInputDealers(){
         let t = '';
         for(var p of data.input_dealers){
             console.log(p)
-            t += `<div class='col-md-2 col-xs-12 col-lg-2 m-4'><div class="card  text-center" style="width:200px; margin:10px;">
+            t += `<div class="col-md-2 col-xs-12 col-lg-2 m-4"><div class="card  text-center" style="width:200px; margin:10px;">
             <img class="card-img-top" src="/assets/img/${p.user.profile_pic}" alt="${p.user.email}">
             <div class="card-body">
               <h4 class="card-title">${p.user.username}</h4>

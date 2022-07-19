@@ -1,10 +1,11 @@
 active('/products')
-highlight('Products');
+
 page_title('Products');
 
 
 // $(window).ready(function(){
-function getProducts(){
+const getProducts=()=>{
+    highlight('Products');
     $.get(`${api_url}/products/all.php`, function(data,status){
         var t = '';
         for(var c of data.product){
@@ -24,3 +25,16 @@ function getProducts(){
     });
 }
 
+const getProduct =(id)=>{
+  $.get(`${api_url}/products/one.php?id=${id}`,(data, status)=>{
+    var product = data.product
+    
+    highlight(product.product_name)
+
+    $('#product_image').attr('src',`/assets/img/products/${product.product_pic}`)
+    $('#product_desc').html(product.product_description)
+    $('#product_name').text(product.product_name);
+    $('#pname').text(product.product_name);
+    console.log(data.product)
+  })
+}
