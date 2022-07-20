@@ -1,4 +1,4 @@
-
+<!-- 
 <div id="farms-list">
     <table class="table table-striped">
         <thead>
@@ -16,7 +16,4 @@
         <tbody id="farms-table"></tbody>
     </table>
 </div>
-<script src="assets/js/farms.js"></script>
-<script>
-    farms_index();
-</script>
+<script src="assets/js/farms.js"></script> -->

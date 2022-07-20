@@ -2,7 +2,7 @@
 $p  = explode('/', $_SERVER['REQUEST_URI']);
 ?>
 
-<div class="row">
+<div class="row" id='product-detail'>
     <h3 id="product_name" class="text-center"></h3>
     <div class="col-md-4">
         <img  id='product_image'>
@@ -11,17 +11,22 @@ $p  = explode('/', $_SERVER['REQUEST_URI']);
             <div class="col-6" id='pname'></div>
         </div>
         <div class="row">
-            <div class="col-6"></div>
-            <div class="col-6"></div>
+            <div class="col-6">Price</div>
+            <div class="col-6" id="price"></div>
         </div>
         <div class="row">
-            <div class="col-6"></div>
-            <div class="col-6"></div>
+            <div class="col-6">Size</div>
+            <div class="col-6" id="size"></div>
         </div>
         <div class="row">
-            <div class="col-6"></div>
-            <div class="col-6"></div>
+            <div class="col-6">In Stock</div>
+            <div class="col-6" id="pstock"></div>
         </div>
+        <div class="row">
+            <div class="col-6">Stall Code</div>
+            <div class="col-6" id="pstall"></div>
+        </div>
+        
         <div class="row">
             <div class="col-6"></div>
             <div class="col-6"></div>

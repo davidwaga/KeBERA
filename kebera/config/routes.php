@@ -64,6 +64,12 @@ switch($url){
     case "/extension-workers":
         include_once "view-normal/extension-worker/index.php";
         break; 
+    case "/stalls":
+        include_once "view-normal/stalls/index.php";
+        break;
+    case "/stalls/".$p[2]:
+        include_once "view-normal/stalls/details.php";
+        break;
     case "/my-profile":
         include_once "view-normal/my-profile/index.php";
         break;  

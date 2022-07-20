@@ -96,6 +96,7 @@ class Helper{
             "updated_at"=>$p['updated_at'],
         ];
     }
+    
     public function create_token($id){
         $token = sha1(date('Y-m-d').$id.rand(1000,9000000));
         $_SESSION['TOKEN']=$token;

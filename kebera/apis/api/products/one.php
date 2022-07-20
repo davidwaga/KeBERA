@@ -16,6 +16,7 @@ if($product->one($id)->rowCount()>0){
     $p['farm']=$help->get_farm($prdt['farm_id']);
     $p['category']=$help->get_category($prdt['category_id']);
     $p['size_variation']=$help->get_size_variation($prdt['size_variation_id']);
+    $p['stall']=$help->get_stall($prdt['stall_id']);
 }else{
     $p['message']='No product found';
 }

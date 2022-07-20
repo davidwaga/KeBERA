@@ -11,4 +11,4 @@ foreach($farm->index()->fetchAll(PDO::FETCH_ASSOC) as $row){
     array_push($farms, $row);
 }
 
-echo json_encode($farms);
+echo json_encode(["farms"=>$farms]);
