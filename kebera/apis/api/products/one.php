@@ -7,7 +7,18 @@ include_once "../../helpers.php";
 $product = new Product();
 $help = new Helper();
 
-$id = $_GET['product_id'];
+$id = $_GET['id'];
 $prdt = $product->one($id)->fetch(PDO::FETCH_ASSOC);
 
-echo json_encode(["product"=>$prdt[0]]);
+if($product->one($id)->rowCount()>0){
+    $p['product']=$prdt;
+    $p['user']=$help->get_user($prdt["user_id"]);
+    $p['farm']=$help->get_farm($prdt['farm_id']);
+    $p['category']=$help->get_category($prdt['category_id']);
+    $p['size_variation']=$help->get_size_variation($prdt['size_variation_id']);
+    $p['stall']=$help->get_stall($prdt['stall_id']);
+}else{
+    $p['message']='No product found';
+}
+
+echo json_encode($p);

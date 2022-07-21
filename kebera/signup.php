@@ -8,6 +8,9 @@
                   <input type="email" id="mail" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon">
                 </div>
                 <div class="mb-3">
+                  <input type="tel" id="phone" class="form-control" placeholder="Phone Number Ex. 0788227244" aria-label="Phone Number" aria-describedby="email-addon">
+                </div>
+                <div class="mb-3">
                 <select name="" class="form-control" id="user_type" reqiured>
                   <option value="" disabled selected>SELECT WHERE YOU FALL</option>                  
                 </select>

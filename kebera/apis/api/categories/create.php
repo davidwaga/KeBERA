@@ -16,5 +16,5 @@ if($category->create()){
     $res['message']='Category was created successfully...';
 }else{
     $res['status']=0;
-    $res['message']='Creating market failed...';
+    $res['message']='Creating Category failed...';
 }

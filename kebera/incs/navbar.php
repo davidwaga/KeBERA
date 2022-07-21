@@ -11,16 +11,25 @@
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
             <div class="input-group">
               <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-              <input type="text" class="form-control" placeholder="Type here...">
+              <input type="text" id="search-text" class="form-control" placeholder="Type here...">
             </div>
           </div>
           <ul class="navbar-nav  justify-content-end">
+            <?php if(isset($_SESSION['TOKEN'])){?>
             <li class="nav-item d-flex align-items-center">
+              <a href="/logout" class="nav-link text-body font-weight-bold px-0">
+                <i class="fa fa-user me-sm-1"></i>
+                <span class="d-sm-inline d-none">Sign Out</span>
+              </a>
+            </li>
+            <?php }else{ ?>
+              <li class="nav-item d-flex align-items-center">
               <a href="/login" class="nav-link text-body font-weight-bold px-0">
                 <i class="fa fa-user me-sm-1"></i>
                 <span class="d-sm-inline d-none">Sign In</span>
               </a>
             </li>
+            <?php } ?>
             <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
               <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
                 <div class="sidenav-toggler-inner">
@@ -113,3 +122,7 @@
       </div>
     </nav>
     <div class="container-fluid py-4">
+    <div id="search-results" class="md-3" style='display:none;'>
+        <h3 class='text-center'>Search Results</h3>
+        <div id="results"></div>
+    </div>

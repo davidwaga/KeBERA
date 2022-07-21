@@ -16,5 +16,5 @@ if($category->edit($id)){
     $res['message']='Category was update successfully...';
 }else{
     $res['status']=0;
-    $res['message']='Updating market failed...';
+    $res['message']='Updating category failed...';
 }
