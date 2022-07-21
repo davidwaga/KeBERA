@@ -1,5 +1,5 @@
 
-<div id="category-list">
+<div id="size-variation-list">
     <table class="table table-striped">
         <thead>
             <tr>
@@ -10,11 +10,11 @@
                 <td></td>
             </tr>
         </thead>
-        <tbody id="category-table"></tbody>
+        <tbody id="size-variation-table"></tbody>
     </table>
 </div>
-<script src="assets/js/category.js">
+<script src="assets/js/size-variation.js">
 </script>
 <script>
-    category_index();
+   size_variation_index();
 </script>

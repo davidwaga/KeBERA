@@ -48,7 +48,34 @@ switch($url){
     case "/products/".$p[2]."/renew":
         include_once "view-normal/products/details.php";
         break;
-    
+
+    case "/categories":
+        include_once "view-normal/categories/index.php";
+        break;
+    case "/categories/".$p[2]:
+        include_once "view-normal/categories/details.php";
+        break;
+    case "/categories/".$p[2]."/add-new":
+        include_once "view-normal/categories/add-category.php";
+        break;
+    case "/categories/".$p[2]."/renew":
+        include_once "view-normal/categories/edit-category.php";
+        break;
+        
+
+    case "/size_variations":
+        include_once "view-normal/size_variations/index.php";
+        break;
+    case "/size_variations/".$p[2]:
+        include_once "view-normal/size_variations/details.php";
+        break;
+    case "/size_variations/".$p[2]."/add-new":
+        include_once "view-normal/size_variations/add-category.php";
+        break;
+    case "/size_variations/".$p[2]."/renew":
+        include_once "view-normal/size_variations/edit-category.php";
+        break;
+
     case "/farms":
         include_once "view-normal/farmer/index.php";
         break;
