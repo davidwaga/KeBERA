@@ -1,4 +1,5 @@
 <?php 
+header('Content-Type: application/json');
 include_once "../../models/UserModal.php";
 //include_once "../../../config/db.php";
 $user = new User();

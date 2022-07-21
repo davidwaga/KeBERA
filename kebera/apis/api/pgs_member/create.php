@@ -1,8 +1,8 @@
 <?php 
 header("Content-Type: application/json");
-header("Accept: PUT");
+header("Accept: POST");
 include_once "../../helpers.php";
-include_once "../models/PGSMemberModal.php";
+include_once "../../models/PGSMemberModal.php";
 
 $member = new PGSMember();
 

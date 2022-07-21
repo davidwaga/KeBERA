@@ -16,7 +16,7 @@ class PGSMember{
         return $this->conn->query("select * from $this->tb_name where pgs_members_id=:id",[':id'=>$id]);
     }
     public function create(){
-        return $this->conn->query("insert into $this->tb_name set pgs_id=:pgs, user_id=:user",[':pgs_id'=>$this->pgs_id,":user"=>$this->user_id]);
+        return $this->conn->query("insert into $this->tb_name set pgs_id=:pgs, user_id=:user",[':pgs'=>$this->pgs_id,":user"=>$this->user_id]);
     }
     public function edit($id){
         $this->pgs_members_id = $id;
