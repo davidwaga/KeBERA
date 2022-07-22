@@ -10,12 +10,14 @@ $category = new Category();
 // $user = $helper->logged_in_user_id($_SESSION['TOKEN']);
 
 // echo $user;
-$cats = [];
+$rs = Array();
 
 foreach($category->index()->fetchAll(PDO::FETCH_ASSOC) as $row){
-    array_push($cats,$row);
+    array_push($rs, Array(
+        "category_id"=>$row['category_id'],
+        "name"=>$row['name'],
+        "created_at"=>$row['created_at'],
+        ));
 }
 
-$res["number_of_category"] = $category->index()->rowCount();
-$res["categories"]=$cats;
-echo json_encode($res);
+echo json_encode(["categories"=>$rs]);
