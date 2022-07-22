@@ -23,7 +23,7 @@ class OrderItem{
     }
     public function edit($id){
         $this->order_item_id;
-        return $this->conn->query("insert into $this->tb_name set quantity=:quantity, colour_variation_id=:colour_variation_id, order_id=:order_id",[
+        return $this->conn->query("update $this->tb_name set quantity=:quantity, colour_variation_id=:colour_variation_id, order_id=:order_id",[
             ":quantity"=>$this->quantity,
             ":colour_variation_id"=>$this->quantity,
             ':order_id'=>$this->order_id,
