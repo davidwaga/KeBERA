@@ -1,4 +1,7 @@
 <application>
+  <component name="EditorSettings">
+    <option name="BIDI_TEXT_DIRECTION" value="RTL" />
+  </component>
   <component name="TodoConfiguration">
     <pattern pattern="\btodo\b.*" />
     <pattern pattern="\bfixme\b.*" />
