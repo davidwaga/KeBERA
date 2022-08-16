@@ -1,0 +1,7 @@
+<application>
+  <component name="GithubAccounts">
+    <account name="trueRama" id="78b76ffa-eefe-43f5-96ed-f8713550229d">
+      <server host="github.com" />
+    </account>
+  </component>
+</application>
