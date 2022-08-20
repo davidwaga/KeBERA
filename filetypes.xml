@@ -1,8 +1,0 @@
-<application>
-  <component name="FileTypeManager" version="18">
-    <extensionMap>
-      <mapping pattern=".analysis_options" type="YAML" />
-      <mapping pattern="pubspec.lock" type="YAML" />
-    </extensionMap>
-  </component>
-</application>
